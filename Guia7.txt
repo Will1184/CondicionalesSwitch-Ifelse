@@ -1,0 +1,142 @@
+using System;
+// Guía:7
+// Ejercicio:11
+// Fecha: 31/3/2022
+// Autor: Brandon William Gomez Monge
+// Carnet: GM21057
+// GD: #12
+// Instructora: Lizeth Carmeline Gochez De Peñate
+
+namespace GM21057Guia7Ejercicio11
+{
+	//Descripcion del programa:
+	/*En la empresa “REGALONA S.A.” se dará una bonificación para los empleados por haber logrado el premio de mejor empresa del año, de acuerdo al cargo que desempeñan y 
+     al tiempo de trabajo laborado de la siguiente forma:
+     Cargo         Salario       Menos de 5 años    Entre 5 y 10 años      Más de 10 años
+     Gerente       $2,500.00           10%                 15%                   20%
+     Jefe          $2,000.00            8%                 12%                   17%
+     Técnico       $1,300.00            5%                  8%                   13%
+     Secretaria    $600.00              4%                  5%                   10%*/
+
+	class Program
+	{
+		const double SALARIOGERENTE=2500.00 ;
+		const double SALARIOJEFE=2000.00 ;
+		const double SALARIOTECNICO=1300.00;
+		const double SALARIOSECRETARIA=600.00 ;
+	
+		public static void Main(string[] args)
+		{
+	    //Identificacion del programa en pantalla
+		Console.Title=("REGALONA S.A. se dará una bonificación para los empleados por haber logrado el premio de mejor empresa del año");
+		Console.WriteLine("REGALONA S.A. se dará una bonificación para los empleados por haber logrado el premio de mejor empresa del año");
+		Console.WriteLine("Autor:Brandon Gomez");
+		Console.WriteLine("----------------------------------------");
+	    
+		//DECLARACION DE VARIABLES
+		double añosTrabajados, bonificacion;
+		string nombre,cargo;
+		//ENTRADA DE DATOS
+		Console.Write("Nombre del empleado: "); nombre=Console.ReadLine();
+		Console.Write("Cargo en la empresa[Gerente,Jefe,Tecnico,Secretaria. SEA CUIDADOSO CON LAS MAYUSCULAS]:"); cargo=Console.ReadLine();
+		Console.Write("Años trabajando:"); añosTrabajados=double.Parse(Console.ReadLine());
+        //PROCESO DE DATOS
+		switch (cargo) {
+        	case "Gerente":
+        		if (añosTrabajados<5 ) 
+        		{bonificacion=SALARIOGERENTE*(0.10);
+        		Console.WriteLine("----------------------------------------");	
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);
+        		}
+        		if (añosTrabajados>=5 && añosTrabajados<=10 ) 
+        		{bonificacion=SALARIOGERENTE*(0.15);
+        		Console.WriteLine("----------------------------------------");
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+        		if (añosTrabajados>10 ) 
+        		{bonificacion=SALARIOGERENTE*(0.20);
+        		Console.WriteLine("----------------------------------------");	
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+        		break;
+        		
+        	case "Jefe":
+        		if (añosTrabajados<5 ) 
+        		{bonificacion=SALARIOJEFE*(0.08);
+        		Console.WriteLine("----------------------------------------");
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+        		
+        		if (añosTrabajados>=5 && añosTrabajados<=10 ) 
+        		{bonificacion=SALARIOJEFE*(0.12);
+        		Console.WriteLine("----------------------------------------");
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+
+        		if (añosTrabajados>10 )
+        		{bonificacion=SALARIOJEFE*(0.17);
+        		Console.WriteLine("----------------------------------------");
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+        		break;
+        		
+        	case "Tecnico":
+        		if (añosTrabajados<5 ) 
+        		{bonificacion=SALARIOTECNICO*(0.05);
+        		Console.WriteLine("----------------------------------------");
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+        		
+        		if (añosTrabajados>=5 && añosTrabajados<=10 ) 
+        		{bonificacion=SALARIOTECNICO*(0.08);
+        		Console.WriteLine("----------------------------------------");
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+        		
+        		if (añosTrabajados>10 ) 
+        		{bonificacion=SALARIOTECNICO*(0.17);
+        		Console.WriteLine("----------------------------------------");
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+        		break;
+        		
+            case "Secretaria":
+        		if (añosTrabajados<5 ) 
+        		{bonificacion=SALARIOSECRETARIA*(0.04);
+        		Console.WriteLine("----------------------------------------");
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+        		
+        		if (añosTrabajados>=5 && añosTrabajados<=10 ) 
+        		{bonificacion=SALARIOSECRETARIA*(0.05);
+        		Console.WriteLine("----------------------------------------");
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+        		
+        	    if (añosTrabajados>10 ) 
+        		{bonificacion=SALARIOSECRETARIA*(0.10);
+        		Console.WriteLine("----------------------------------------");
+        		Console.WriteLine("Nombre: "+nombre);
+        		Console.WriteLine("Años trabajado: "+añosTrabajados);
+        		Console.WriteLine("Su bono sera de:$ "+bonificacion);}
+        		break;}
+		
+		//SALIDA DE DATOS
+		Console.ReadKey();
+		
+		
+		}
+	}
+}
